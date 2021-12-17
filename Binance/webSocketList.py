@@ -1,6 +1,7 @@
 from binance.client import Client
 
 import configparser
+
 # Загрузка ключей из файла config
 config = configparser.ConfigParser()
 config.read_file(open('../secret.cfg'))
@@ -30,6 +31,7 @@ def btc_trade_history(msg):
         btc_price['error'] = False
     else:
         btc_price['error'] = True
+
 
 # init and start the WebSocket
 
