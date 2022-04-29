@@ -9,7 +9,7 @@ def btc_trade_history(msg):
     ''' define how to process incoming WebSocket messages '''
     if msg['e'] != 'error':
 
-        print("Ticker: " + msg['s'] + " close:" + msg['c'] + " change %:" + msg['p'])
+        print("Ticker: " + msg['s'] + " close:" + msg['c'] + " change %:" + msg['P'])
 
         btc_price['last'] = msg['c']
         btc_price['bid'] = msg['b']
@@ -37,10 +37,10 @@ bsm.start_symbol_ticker_socket(callback=btc_trade_history, symbol='ETHUSDT')
 # this is just for example purposes
 sleep(2)
 
-"""
-# stop websocket
-bsm.stop()
 
+# stop websocket
+# bsm.stop()
+"""
 sleep(2)
 # display more info about the various websocket streams
 help(ThreadedWebsocketManager)
